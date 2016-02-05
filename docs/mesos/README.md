@@ -53,8 +53,7 @@ See the [Dockerized Mesos Guide](DockerizedDeployment.md) for info on how to get
 ## 3. Launching Tasks
 Calico is compatible with all frameworks which use the new NetworkInfo protobuf when launching tasks. Marathon has introduced limited support for this. For an early peek at using this , use `mesosphere/marathon:v0.14.0-RC2`.
 
-But first, you'll need to open tcp port 8080 on your firewall 
-Marathon port on your firewall to connect to Marathon. 
+But first, you'll need to open tcp port 8080 on your firewall to connect to Marathon. 
 Here's an example `firewalld` config command to do this:
 
 ```
@@ -78,7 +77,7 @@ This version of Marathon supports two new fields in an application's JSON file:
  
 > See [Marathon's IP-Per-Task documentation][marathon-ip-per-task-doc] for more information.
 
-The Marathon UI has does not yet include a field for specifiying NetworkInfo, so we'll use the command line to launch an app with Marathon's REST API. Below is a sample `app.json` file that is configured to receive an address from Calico:
+The Marathon UI does not yet include a field for specifiying NetworkInfo, so we'll use the command line to launch an app with Marathon's REST API. Below is a sample `app.json` file that is configured to receive an address from Calico:
 ```
 {
     "id":"/calico-apps",
